@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>로또 당첨 횟수를 알아보자.</h1>
+<hr>
+<h2>이번 회차 당첨 번호 : {{ lucky_number }} + {{ bns_number }}</h2>
+<ul>
+  <li>1등 : {{ no1 }}번</li>
+  <li>2등 : {{ no2 }}번</li>
+  <li>3등 : {{ no3 }}번</li>
+  <li>4등 : {{ no4 }}번</li>
+  <li>5등 : {{ no5 }}번</li>
+  <li>꽝 : {{ fail }}번</li>
+<ul>
+{% endblock content %}
