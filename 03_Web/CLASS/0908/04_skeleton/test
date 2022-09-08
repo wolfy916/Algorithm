@@ -1,0 +1,5 @@
+데이터베이스 중간에 커스텀 user 모델로 변경하는 상황
+
+1. migrations 폴더 안에 있는 숫자(0001) 붙은 파일만 삭제(__init__.py 삭제 금지) / 폴더 삭제 금지 
+2. db.sqlite3 삭제
+3. python manage.py makemigrations / migrate랑 진행
