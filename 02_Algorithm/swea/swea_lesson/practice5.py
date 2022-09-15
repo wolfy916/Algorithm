@@ -25,10 +25,14 @@ for tc in range(1, T+1):
             dp[j-1][1] = 0
 
     maxV = 0
-    result = []
     for x, y in dp:
         if maxV <= x:
             maxV = x
-            result += [y]
 
-    print(f'#{tc} {cnt} {max(result)}')
+    result = 0
+    for x, y in dp:
+        if maxV == x:
+            if result <= y:
+                result = y
+
+    print(f'#{tc} {cnt} {result}')
