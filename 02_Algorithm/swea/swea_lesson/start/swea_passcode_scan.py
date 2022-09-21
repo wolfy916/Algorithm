@@ -3,16 +3,16 @@ import sys
 sys.stdin = open("sample_input.txt", "r")
 
 D = {
-    '3211': 0,
-    '2221': 1,
-    '2122': 2,
-    '1411': 3,
-    '1132': 4,
-    '1231': 5,
-    '1114': 6,
-    '1312': 7,
-    '1213': 8,
-    '3112': 9,
+    '211': 0,
+    '221': 1,
+    '122': 2,
+    '411': 3,
+    '132': 4,
+    '231': 5,
+    '114': 6,
+    '312': 7,
+    '213': 8,
+    '112': 9,
 }
 
 for tc in range(1, int(input()) + 1):
@@ -26,17 +26,12 @@ for tc in range(1, int(input()) + 1):
 
         if line == save_line:
             continue
+
         save_line = line
 
-        if save_line.strip('0'):
-            test_nums = []
-            test_num = ''
-            for x in save_line.strip('0'):
-                if x == '0':
-                    if len(test_num):
-                        test_nums += [test_num]
-                    test_num = ''
-                    continue
+        if line.strip('0'):
+            test_line = ''
+            for x in line.strip('0'):
 
                 if x.isnumeric():
                     v = int(x)
@@ -45,56 +40,52 @@ for tc in range(1, int(input()) + 1):
 
                 for i in range(3, -1, -1):
                     if v & (1 << i):
-                        test_num += '1'
+                        test_line += '1'
                     else:
-                        test_num += '0'
-            else:
-                test_nums += [test_num]
+                        test_line += '0'
 
-            for test_number in test_nums:
-
-                lenV = len(test_number)
-
-                if lenV <= 52:
-                    continue
-
-                test_number = test_number.strip('0')
-                while len(test_number) % 56 != 0:
-                    test_number = '0' + test_number
-
-                c = len(test_number) // 56
-
-                code = []
-                stack = []
+            code = []
+            test_line = test_line.strip('0')
+            while test_line:
+                check = 0
+                cnt = 0
                 key = ''
-                for num in test_number:
-                    if len(stack):
-                        if stack[-1] != num:
-                            key += str(len(stack)//c)
-                            stack = [num]
+                for i in range(len(test_line)):
+                    cnt += 1
+                    if test_line[i] == '1' and test_line[i+1] == '0':
+                        if check:
+                            key += str(cnt)
+                            end = i+1
+                            break
                         else:
-                            stack += [num]
-                    else:
-                        stack += [num]
+                            check += 1
+                    if test_line[i] != test_line[i+1]:
+                        key += str(cnt)
+                        cnt = 0
 
-                    if len(key) == 4:
-                        code += [D[key]]
-                        key = ''
+                test_line = test_line[end + 1:].strip('0')
+
+                ok_cnt = 0
+                while ok_cnt != 1:
+                    c = 1
+                    for keyV in D.keys():
+                        if int(key) == c*int(keyV):
+                            code += [D[keyV]]
+                            ok_cnt = 1
+                            break
+                    c += 1
+
+            sum1 = 0
+            sum2 = 0
+            for j in range(7):
+                if j % 2:
+                    sum2 += code[j]
                 else:
-                    key += str(len(stack)//c)
-                    code += [D[key]]
+                    sum1 += code[j]
 
-                sum1 = 0
-                sum2 = 0
-                for j in range(7):
-                    if j % 2:
-                        sum2 += code[j]
-                    else:
-                        sum1 += code[j]
-
-                if (sum1 * 3 + sum2 + code[-1]) % 10 == 0:
-                    if code not in used_code:
-                        result += sum(code)
-                    used_code += [code]
+            if (sum1 * 3 + sum2 + code[7]) % 10 == 0:
+                if code not in used_code:
+                    result += sum(code)
+                used_code += [code]
 
     print(f'#{tc} {result}')
