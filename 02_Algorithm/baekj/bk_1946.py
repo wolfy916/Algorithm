@@ -9,10 +9,10 @@ for _ in '_'*int(input()):
     for i in range(N):
         a, b = map(int, input().split())
         arr[a] = b
-    cnt = 0
-    for j in range(1, N):
-        for k in range(j+1, N-1):
-            if arr[j] > arr[k]:
-                cnt += 1
-                break
-    print(N-cnt)
+    cnt = 1
+    c = arr[1]
+    for j in range(2, N+1):
+        if c > arr[j]:
+            c = arr[j]
+            cnt += 1
+    print(cnt)
