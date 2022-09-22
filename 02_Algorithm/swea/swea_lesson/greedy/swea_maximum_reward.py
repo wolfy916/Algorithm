@@ -1,24 +1,31 @@
-# 최대 상금
-def f(i, k, c):
-    global test
-    if c == 0 or i == k:
-        test += [int(''.join(num))]
+# 최대 상금 (그리디 + 완전 탐색)
+
+# 중복 허용 조합
+def f(n, cnt, N):       # n : 이전까지의 교환 횟수, cnt : 총 교환 횟수, N : 숫자판 갯수
+    global maxV
+    if n == cnt:
+        tmp = int(''.join(num))
+        if maxV < tmp:
+            maxV = tmp
     else:
-        for j in range(k):
-            num[i], num[j] = num[j], num[i]
-            cnt = 1 if i != j else 0
-            f(i + 1, k, c - cnt)
-            num[i], num[j] = num[j], num[i]
+        for i in range(N-1):            # 교환할 두 위치 i, j를 고르는 조합 i < j
+            for j in range(i+1, N):
+                num[i], num[j] = num[j], num[i]
+                tmp = (''.join(num))
+                if tmp not in u[n]:
+                    u[n] += [tmp]
+                    f(n+1, cnt, N)
+                num[i], num[j] = num[j], num[i]
 
 
 for tc in range(1, int(input()) + 1):
-    num, count = input().split()
+    num, cnt = input().split()
     num = list(num)
-    test = []
-    f(1, len(num), int(count))
-    maxV = list(str(max(test)))
+    cnt = int(cnt)
 
-    if len(num) // 2 < int(count) and (int(count) - (len(num) // 2)) % 2:
-        maxV[-1], maxV[-2] = maxV[-2], maxV[-1]
+    N = len(num)
+    maxV = 0
+    u = [[] for _ in '_'*cnt]
+    f(0, cnt, N)
 
-    print(f'#{tc} {"".join(maxV)}')
+    print(f'#{tc} {maxV}')
