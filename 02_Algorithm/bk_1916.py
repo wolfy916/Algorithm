@@ -8,19 +8,16 @@ def dfs(v, sumv):
     global minV
 
     if minV < sumv:
-        print('리턴합니다.')
         return
 
     elif v == E:
         if minV > sumv:
             minV = sumv
-            print(f'minV를 {sumv}로 갱신합니다. ')
 
     else:
         for w in adj_List[v]:
             if not visited[w]:
                 visited[w] = 1
-                print(w)
                 dfs(w, sumv + charge[v][w])
                 visited[w] = 0
 
@@ -38,6 +35,4 @@ visited = [0] * (N + 1)
 minV = 99999 * M
 dfs(S, 0)
 
-print('-------')
-print(adj_List)
 print(minV)

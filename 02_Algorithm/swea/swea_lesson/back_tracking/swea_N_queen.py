@@ -40,8 +40,6 @@ for tc in range(1, int(input())+1):
     cnt = q_cnt = 0
     for i in range(N):
         chess = [[0]*N for _ in '_'*N]
-        if i == 3:
-            a = 0
         check(0, i, 1)
 
     print(f'#{tc} {cnt}')
