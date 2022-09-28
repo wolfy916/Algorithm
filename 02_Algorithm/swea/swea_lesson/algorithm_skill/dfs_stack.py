@@ -40,3 +40,38 @@ visited = [0] * N   # visited 생성
 stack = [0] * N     # stack 생성
 dfs(1, N)
 print()
+
+'''
+DFS 알고리즘 - 반복 구조
+
+1. 지나간 정점을 저장하는 방법  -> 중복 방지 코드 필요
+STACK s
+visited []
+DFS(v)
+    push(s,v)
+    while not isEmpty(s)
+        v = pop(s)
+        if not visited[v]  -> 중복 방지 (중요한 포인트)
+            visit(v)
+            for each w in adjacency(v)
+                if not visited[w]
+                    push(s, w)
+
+                    
+2. 갈림길을 저장 (1번보다 효율적)
+STACK s
+visited []
+DFS(v)
+    push(s,v)
+    visited[v] = True  -> 중복 방지
+    while not isEmpty(s)
+        v = pop(s)
+        visit(v)
+            for each w in adjacency(v)
+                if not visited[w]
+                    push(s, w)
+                    visited[v] = True  -> 중복 방지
+
+
+
+'''

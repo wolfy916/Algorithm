@@ -1,43 +1,6 @@
-# 최소 비용 구하기
+n = int(input())
+arr = [{x} for x in range(0, n+1)]
 
-import sys
-input = sys.stdin.readline
+test = arr[2] | arr[4]
 
-
-def dfs(v, sumv):
-    global minV
-
-    if minV < sumv:
-        print('리턴합니다.')
-        return
-
-    elif v == E:
-        if minV > sumv:
-            minV = sumv
-            print(f'minV를 {sumv}로 갱신합니다. ')
-
-    else:
-        for w in adj_List[v]:
-            if not visited[w]:
-                visited[w] = 1
-                print(w)
-                dfs(w, sumv + charge[v][w])
-                visited[w] = 0
-
-
-N = int(input())
-M = int(input())
-adj_List = [[] for _ in '_'*(N+1)]
-charge = [[0]*(N+1) for _ in '_'*(N+1)]
-for _ in '_'*M:
-    s, e, charge[s][e] = map(int, input().split())
-    adj_List[s].append(e)
-S, E = map(int, input().split())
-
-visited = [0] * (N + 1)
-minV = 99999 * M
-dfs(S, 0)
-
-print('-------')
-print(adj_List)
-print(minV)
+print(test)
