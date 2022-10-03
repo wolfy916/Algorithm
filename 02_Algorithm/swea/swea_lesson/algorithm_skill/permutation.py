@@ -1,42 +1,19 @@
-def f(i, N):
-    global minV
-    global cnt
-    cnt += 1
-    if i == N:
-        s = 0
-        for k in range(N):
-            s += arr[k][P[k]]       # k행에서 P[k]열 선택
-        if minV > s:
-            minV = s
+def perm(i, k, r):
+    if i == r:
+        print(*p)  # 원하는 작업 수행
     else:
-        for j in range(i, N):
-            P[i], P[j] = P[j], P[i]
-            f(i+1, N)
-            P[i], P[j] = P[j], P[i]
+        for j in range(k):
+            if not used[j]:    # arr[j]를 사용하지 않았다면
+                used[j] = 1    # arr[j]를 사용함으로 표시
+                p[i] = arr[j]  # p[i]는 arr[j]로 결정
+                perm(i+1, k, r)   # p[i+1] 값을 결정하러 이동
+                used[j] = 0    # arr[j]를 다른 자리에서 쓸 수 있도록 해제
 
-def f2(i, s, N):    # i행, s i-1행까지의 합, N 총 행 수
-    global minV
-    global cnt
-    cnt += 1
-    if i == N:
-        if minV > s:
-            minV = s
-    elif minV <= s:
-        return
-    else:
-        for j in range(i, N):
-            P[i], P[j] = P[j], P[i]
-            f2(i+1, s+arr[i][P[i]], N)
-            P[i], P[j] = P[j], P[i]
 
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-    arr = [list(map(int, input().split())) for _ in range(N)]
-
-    P = [i for i in range(N)]
-    minV = 1000
-    cnt = 0
-    #f(0, N)
-    f2(0, 0, N)
-    print(f'#{tc} {minV} {cnt}')
+# nPr
+N = int(input())  # n
+R = int(input())  # r
+arr = list(range(1, N+1))
+used = [0] * N
+p = [0] * R
+perm(0, N, R)

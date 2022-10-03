@@ -1,34 +1,31 @@
-def comb(k, r, s, lenv):  # n : 선택 원소 갯수, r: 선택할 총 원소 갯수, s: 매 호출된 함수마다 탐색을 시작할 인덱스
-    if k == r:
-        print(p1)
+def comb(n, r, s):  # s: 선택할 수 있는 구간의 시작
+    if r == 0:
+        print(*c)
     else:
-        for i in range(s, lenv - r + k + 1):
-            if used[i] == 0:
-                used[i] = 1
-                p1[k] = arr[i]
-                comb(k+1, r, i+1, lenv)
-                used[i] = 0
+        for i in range(s, n-r+1):
+            c[r-1] = arr[i]
+            comb(n, r-1, i+1)
 
 
-def perm(k, r, lenv):
-    if k == r:
-        print(p2)
+def perm(i, n, r):
+    if i == r:
+        print(*p)  # 원하는 작업 수행
     else:
-        for i in range(lenv):
-            if used[i] == 0:
-                used[i] = 1
-                p2[k] = arr[i]
-                perm(k+1, r, lenv)
-                used[i] = 0
+        for j in range(n):
+            if not used[j]:    # arr[j]를 사용하지 않았다면
+                used[j] = 1    # arr[j]를 사용함으로 표시
+                p[i] = arr[j]  # p[i]는 arr[j]로 결정
+                perm(i+1, n, r)   # p[i+1] 값을 결정하러 이동
+                used[j] = 0    # arr[j]를 다른 자리에서 쓸 수 있도록 해제
 
 
 arr = list(map(int, input().split()))
 N = len(arr)
 R = int(input())  # N:총 선택할 원소의 갯수
-p1 = [0] * R
-p2 = [0] * R
+p = [0] * R
+c = [0] * R
 used = [0] * len(arr)
 
-comb(0, R, 0, N)
+comb(N, R, 0)
 print('------------------')
-perm(0, R, N)
+perm(0, N, R)
