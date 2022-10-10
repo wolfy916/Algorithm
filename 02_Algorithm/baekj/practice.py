@@ -1,39 +1,44 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
 
-def perm1(i, N):
-    if i == N:
-        print(P)
-    else:
-        for j in range(i, N):
-            P[i], P[j] = P[j], P[i]
-            perm1(i+1, N)
-            P[i], P[j] = P[j], P[i]
 
-def perm2(k, r, lenv):
-    if k == r:
-        print(p2)
-    else:
-        for i in range(lenv):
-            if used[i] == 0:
-                used[i] = 1
-                if p2[k] != P[i]:
-                    p2[k] = P[i]
-                perm2(k+1, r, lenv)
-                used[i] = 0
+def bfs(kk, ss, inf):
+    cnt = 0
+    minV_L = [INF] * (N + 1)
+    visited = [0] * (N + 1)
+    check = N
+    q = deque([s])
+    visited[s] = 1
+    check -= 1
+    while q:
+        v = q.popleft()
 
-def perm3(arr, r):
-    for i in range(len(arr)):
-        if r == 1:
-            yield [arr[i]]
-        else:
-            for next in perm3(arr, r-1):
-                yield [arr[i]] + next
+        if minV_L[v] < k:
+            continue
+        elif minV_L[v] >= k and minV_L[v] != INF:
+            cnt += 1
 
-P = [1, 2, 3]
-p2 = [0] * len(P)
-used = [0] * len(P)
-# perm1(0, len(P))
-# print('-----------------')
-# perm2(0, 3, len(P))
+        if check == 0:
+            continue
 
-for arr in perm3(P, 3):
-    print(arr)
+        for w, r in adjL[v]:
+            if not visited[w]:
+                q.append(w)
+                minV_L[w] = min(minV_L[v], r)
+                visited[w] = 1
+                check -= 1
+    return cnt
+
+
+N, Q = map(int, input().split())  # 1 ≤ N: 영상 번호, Q: 농부의 질문 개수 ≤ 5,000
+adjL = [deque() for _ in '_'*(N+1)]
+for _ in '_'*(N-1):
+    p, q, r = map(int, input().split())  # 1 ≤ pi, qi ≤ N, 1 ≤ ri ≤ 1,000,000,000
+    adjL[p].append((q, r))
+    adjL[q].append((p, r))
+
+INF = 1000000000
+for _ in '_'*Q:
+    k, s = map(int, input().split())  # 1 ≤ ki ≤ 1,000,000,000, 1 ≤ vi ≤ N
+    print(bfs(k, s, INF))
