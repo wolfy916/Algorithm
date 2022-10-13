@@ -1,77 +1,55 @@
-# 궁수의 공격 대상을 찾는 target 함수 설정
-def target(n):
-    minV = 100
-    target = 0
-    for enemy in enemies2:
-        distance = abs(enemy[0] - N) + abs(enemy[1] - n)
-        if distance <= D and minV >= distance:
-            minV = distance
-            target = enemy
-    if target:
-        return target
-    return False
-
-# target을 공격하는 attack 함수 설정
-def attack(i):
-    global kill
-    archer = archers[i]
-    target1 = target(archer[0])
-    target2 = target(archer[1])
-    target3 = target(archer[2])
-
-    # 각 궁수의 target 중복체크
-    if target1:
-        enemies2.remove(target1)
-        kill += 1
-    if target2 and target2 != target1:
-        enemies2.remove(target2)
-        kill += 1
-    if target3 and target3 != target1 and target3 != target2:
-        enemies2.remove(target3)
-        kill += 1
-
-# 적이 이동하는 move 함수 설정
-def move(enemies2):
-    moved_enemies = []
-    for [a, b] in enemies2:
-        if a == N-1:
-            pass
-        else:
-            moved_enemies.append([a+1, b])
-
-    return moved_enemies
-
-# 입력값 설정
+# 양팔 저울
 from sys import stdin
-N, M, D = map(int, stdin.readline().split())
-arr = [[] for _ in '_'*N]
-for i in range(N):
-    arr[i] = list(map(int, stdin.readline().split()))
-
-# 적의 좌표값 저장하기
-enemies = []
-for i in range(N-1, -1, -1):
-    for j in range(M):
-        if arr[i][j] == 1:
-            enemies.append([i, j])
-print(enemies)
-# 궁수 배치의 경우의 수를 조합으로 구현
+input = stdin.readline
 from itertools import combinations
-lst = list(range(M))
-archers = list(combinations(lst, 3))
 
+N = int(input())  # 1 <= 추의 개수 <= 30
+weights = list(map(int, input().split()))  # 1g <= 추의 무게 <= 500g
+M = int(input())  # 1 <= 구슬의 개수 <= 7
+beads = list(map(int, input().split()))  # 1g <= 구슬의 무게 <= 40,000g
 
-# 모든 궁수 배치마다의 경우의 수를 반복함.
-result = 0
-for i in range(len(archers)):
-    kill = 0
-    enemies2 = enemies[:] # 적의 제거 수와 적 배치를 그 때마다 초기화
+dp = [weights] + [[0]*N for _ in '_'*(N-1)]
+comb = list(combinations(list(range(N)), 2))
+for i, j in comb:
+    dp[1][i] = dp[1][j] = dp[0][i] + dp[0][j]
 
-    # 적이 남아있다면, 궁수 공격 후 이동한다.
-    while enemies2:
-        attack(i)
-        enemies2 = move(enemies2)[:]
-    if result < kill:
-        result = kill
+sumV = sum(weights)
+end_check = False
+check = False
+for k in range(2, N):
+    for i, j in comb:
+        dp[k][i] = dp[k][j] = dp[0][i] + dp[k-1][j]
+        if dp[k][i] == sumV:
+            end_check = True
+            break
+    if end_check:
+        break
 
-print(result)
+arr = []
+for i in range(N):
+    arr += dp[i]
+arr = set(arr)
+arr = list(arr)
+
+for bead in beads:
+    in_check = False
+    for weight in arr:
+        minus = weight - bead
+        if minus > 0:
+            if minus in arr:
+                in_check = True
+                break
+        elif minus == 0:
+            in_check = True
+            break
+
+    if in_check:
+        print('Y', end=' ')
+    else:
+        print('N', end=' ')
+
+# for bead in beads:
+#     if bead in dp:
+#         print('Y', end=' ')
+#     else:
+#         print('N', end=' ')
