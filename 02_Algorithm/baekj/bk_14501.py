@@ -1,3 +1,4 @@
+# 퇴사
 N = int(input())
 table = [0] + [tuple(map(int, input().split())) for _ in '_'*N]
 dp = [0] * (N+2)
