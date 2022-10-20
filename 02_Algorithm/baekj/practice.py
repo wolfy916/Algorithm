@@ -1,26 +1,25 @@
-chars1 = input()
-chars2 = input()
-l1 = len(chars1)
-l2 = len(chars2)
+R,C = map(int,input().split())
 
-ismax = 0
-for i in range(l1):
-    cnt = 0
-    for j in range(l2-ismax):
-        compare1 = chars1[i:i+ismax]
-        compare2 = chars2[j:j+ismax]
-        if compare1 == compare2:
-            di, dj = i+ismax, j+ismax
-            cnt += ismax
-            try:
-               while chars2[dj] == chars1[di]:
-                   cnt += 1
-                   dj += 1
-                   di += 1
-            except IndexError:
-               pass
-            if ismax < cnt:
-               ismax = cnt
-            cnt = 0
+arr = [list(input()) for _ in range(R)]
+check = [['']*C for _ in range(R)]
 
-print(ismax)
+stack = [(0,0,1,arr[0][0])]
+result = 0
+dx = [-1,1,0,0]
+dy = [0,0,1,-1]
+while stack:
+    x,y,cnt,total = stack.pop()
+    if result < cnt:
+        result = cnt
+    if result == 26:
+        break
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < R and 0<= ny <C:
+            if arr[nx][ny] not in total:
+                temp = total + arr[nx][ny]
+                if check[nx][ny] != temp:
+                    check[nx][ny] = temp
+                    stack.append((nx,ny,cnt+1,temp))
+print(result)
