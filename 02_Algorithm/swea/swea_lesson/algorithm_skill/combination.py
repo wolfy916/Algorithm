@@ -16,17 +16,17 @@ def comb1(n, r):
 R1 = 3
 arr = [0, 1, 2, 3]
 comb_arr = [0] * R1
-
 comb1(4, 3)
+print('-------------------------')
 
-
-# 10개중 3개 고르는 조합
-N = 10
+# 5개중 3개 고르는 조합
+N = 5
 for i in range(N-2):
     for j in range(i+1, N-1):
         for k in range(j+1, N):
             print(i, j, k)
 
+print('----------------------------')
 
 # n개에서 r개를 고르는 조합 (재귀)
 def comb2(n, r, s):  # s: 선택할 수 있는 구간의 시작
