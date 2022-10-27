@@ -1,7 +1,7 @@
 # 로봇청소기
 delta = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-w, h = map(int, input().split())  # 1 <= w, h <= 20
+w, h = map(int, input().split())
 robot = 'o'; clean = '.'; dirty = '*'; block = 'x'
 dirty_num = 0
 area = []
@@ -18,7 +18,7 @@ for i in range(h):
 
 area[si][sj] = clean
 INF = 1000000
-visited = [[[INF, dirty_num]] * w] * h
+visited = [[[INF, dirty_num] for _ in '_'*w] for _ in '_'*h]
 q = [(si, sj, dirty_num)]
 visited[si][sj][0] = 0
 result = -1
