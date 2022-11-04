@@ -13,11 +13,6 @@ play_time = "99:59:59"
 adv_time = "25:00:00"
 logs = ["69:59:59-89:59:59", "01:00:00-21:00:00", "79:59:59-99:59:59", "11:00:00-31:00:00"]
 
-# play_time = "00:00:10"
-# adv_time = "00:00:01"
-# logs = ["00:00:00-00:00:03", "00:00:00-00:00:04", "00:00:07-00:00:09", "00:00:06-00:00:08"]
-
-
 
 # 시간을 초 단위로 반환
 def change(time):
@@ -32,7 +27,7 @@ def change(time):
 
 play_time = change(play_time)
 table = [0] * 360002
-adv_time = change(adv_time)
+adv_time = change(adv_time) + 1
 
 for i in range(len(logs)):
     table[change(logs[i][:8])] += 1
@@ -68,7 +63,3 @@ for i in range(3):
 
 answer = ':'.join(time)
 print(answer)
-
-
-
-
