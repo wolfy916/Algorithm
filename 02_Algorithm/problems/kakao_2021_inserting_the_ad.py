@@ -13,7 +13,6 @@ adv_time <= play_time
 각 원소는 길이 17로 고정된 문자열 'HH:MM:SS~HH:MM:SS'
 '''
 
-
 play_time = "99:59:59"
 adv_time = "25:00:00"
 logs = ["69:59:59-89:59:59", "01:00:00-21:00:00", "79:59:59-99:59:59", "11:00:00-31:00:00"]
@@ -32,27 +31,23 @@ def change(time):
 
 play_time = change(play_time)
 table = [0] * 360002
-adv_time = change(adv_time) + 1
+adv_time = change(adv_time)
 
 for i in range(len(logs)):
     table[change(logs[i][:8])] += 1
-    table[change(logs[i][9:]) + 1] -= 1
-
+    table[change(logs[i][9:])+1] -= 1
 for i in range(1, play_time + 1):
     table[i] += table[i-1]
-print(table)
 for i in range(1, play_time + 1):
     table[i] += table[i-1]
-print(table)
 
 maxV = 0
 result = 0
-for i in range(adv_time, play_time + 1):
-    temp = table[i] - table[i-adv_time]
+for i in range(adv_time, play_time):
+    temp = table[i] - table[i-adv_time-1]
     if maxV < temp:
         maxV = temp
         result = i - adv_time
-print(maxV)
 
 hour = result // 3600
 result -= hour * 3600
