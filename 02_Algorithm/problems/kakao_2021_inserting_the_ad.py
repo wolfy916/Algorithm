@@ -18,8 +18,8 @@ adv_time = "25:00:00"
 logs = ["69:59:59-89:59:59", "01:00:00-21:00:00", "79:59:59-99:59:59", "11:00:00-31:00:00"]
 
 
-# 시간을 초 단위로 반환
-def change(time):
+# HH:MM:SS -> S
+def chg_second(time):
     time = list(time.split(':'))
     time_for_second = 0
     for i in range(3):
@@ -29,37 +29,46 @@ def change(time):
     return time_for_second
 
 
-play_time = change(play_time)
-table = [0] * 360002
-adv_time = change(adv_time)
+# S -> HH:MM:SS
+def chg_datetime(time):
+    hour = time // 3600
+    time %= 3600
+    minute = time // 60
+    second = time % 60
+    lst = [hour, minute, second]
+    for i in range(3):
+        temp_str = str(time[i])
+        if len(temp_str) < 2:
+            temp_str = '0' + temp_str
+        lst[i] = temp_str
+    return ':'.join(lst)
 
-for i in range(len(logs)):
-    table[change(logs[i][:8])] += 1
-    table[change(logs[i][9:])+1] -= 1
+
+# 동영상 총 재생시간과 광고고
+play_time = chg_second(play_time)
+adv_time = chg_second(adv_time)
+
+table = [0] * (play_time + 1)
+for log in logs:  # log = "HH:MM:SS-HH:MM:SS"
+    log_s, log_e = chg_second(log[:8]), chg_second(log[9:])
+    table[log_s] += 1
+    table[log_e+1] -= 1
+
 for i in range(1, play_time + 1):
     table[i] += table[i-1]
+
 for i in range(1, play_time + 1):
     table[i] += table[i-1]
+
+table = [0] + table
 
 maxV = 0
 result = 0
-for i in range(adv_time, play_time):
-    temp = table[i] - table[i-adv_time-1]
+for i in range(adv_time, play_time+2):
+    temp = table[i] - table[i-adv_time]
     if maxV < temp:
         maxV = temp
         result = i - adv_time
 
-hour = result // 3600
-result -= hour * 3600
-minute = result // 60
-second = result - minute * 60
-
-time = [hour, minute, second]
-for i in range(3):
-    temp = str(time[i])
-    if len(temp) < 2:
-        temp = '0' + temp
-    time[i] = temp
-
-answer = ':'.join(time)
+answer = chg_datetime(result)
 print(answer)
