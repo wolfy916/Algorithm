@@ -1,30 +1,24 @@
-# 개똥벌레
+from time import time
+from copy import deepcopy
 
-N, H = map(int, input().split())  # 2 ≤ N ≤ 200,000, 2 ≤ H ≤ 500,000
-bottom = [0] * (H+1)  # ex) bottom[1] = 크기가 1인 석순의 갯수
-top = [0] * (H+1)  # ex) top[2] = 크기가 2인 종유석의 갯수
-for i in range(1, N+1):
-    obstacle = int(input())
-    # 홀수 -> 석순
-    if i % 2:
-        bottom[obstacle] += 1
-    # 짝수 -> 종유석
-    else:
-        top[obstacle] += 1
+a = [list(range(10000)) for _ in range(10000)]
 
-print(bottom)
-print(top)
+t1 = time()
 
-for i in range(H-1, 0, -1):
-    bottom[i] += bottom[i+1]
-print(bottom)
+b1 = [[] for _ in range(10000)]  # 1번 연산
+for i in range(10000):
+    b1[i] = a[i][:]
 
-for i in range(H-1, 0, -1):
-    top[i] += top[i+1]
-top = [0] + top[1:][::-1]
-print(top)
-paths = [bottom[i] + top[i] for i in range(1, H+1)]
-print(paths)
-minV = min(paths)
-cntV = paths.count(minV)
-print(minV, cntV)
+t2 = time()
+
+b2 = [line[:] for line in a]  # 2번 연산
+
+t3 = time()
+
+b3 = deepcopy(a)  # 3번 연산
+
+t4 = time()
+
+print(f'1번 수행시간 : {t2-t1:.10f}초')
+print(f'2번 수행시간: {t3-t2:.10f}초')
+print(f'3번 수행시간: {t4-t3:.10f}초')

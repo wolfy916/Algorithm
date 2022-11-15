@@ -4,8 +4,6 @@ N, M = map(int, input().split())  # 3 ≤ N, M ≤ 8
 area = [[1] * (M + 2)] + [[1] + list(map(int, input().split())) + [1] for _ in '_' * N] + [[1] * (M + 2)]
 
 delta = ((-1, 0), (1, 0), (0, -1), (0, 1))
-delta2 = ((-1, -1), (1, -1), (1, 1), (-1, 1))
-
 
 lst = []
 for i in range(1, N + 1):
