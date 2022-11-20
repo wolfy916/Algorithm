@@ -1,24 +1,28 @@
-from time import time
-from copy import deepcopy
+# 트리의 지름
 
-a = [list(range(10000)) for _ in range(10000)]
+n = int(input())  # 1 ≤ n ≤ 10,000
+adjM = [[0]*(n+1) for _ in '_'*(n+1)]
+for _ in range(n-1):
+    par, chd, value = map(int, input().split())  # 가중치는 100보다 크지 않은 자연수
+    adjM[par][chd] = value
+    adjM[chd][par] = value
 
-t1 = time()
 
-b1 = [[] for _ in range(10000)]  # 1번 연산
-for i in range(10000):
-    b1[i] = a[i][:]
+def dfs(s, v):
+    global maxV
+    visited[s] = 1
+    for i in range(1, n+1):
+        if adjM[s][i]:
+            w = i
+            if s < w and not visited[w]:
+                dfs(w, v+adjM[s][w])
 
-t2 = time()
+    if maxV < v:
+        maxV = v
 
-b2 = [line[:] for line in a]  # 2번 연산
 
-t3 = time()
-
-b3 = deepcopy(a)  # 3번 연산
-
-t4 = time()
-
-print(f'1번 수행시간 : {t2-t1:.10f}초')
-print(f'2번 수행시간: {t3-t2:.10f}초')
-print(f'3번 수행시간: {t4-t3:.10f}초')
+maxV = 0
+for x in range(1, n):
+    visited = [0] * (n + 1)
+    dfs(x, 0)
+print(maxV)
