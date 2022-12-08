@@ -10,10 +10,9 @@ def dfs(v, e, weigh):
     else:
         for w, c in adjL[v]:
             if not visited[w] and weigh <= c:
-                visited[w] = True
+                visited[w] = 1
                 if dfs(w, e, weigh):
                     return True
-                # visited[w] = 0
         return False
 
 
@@ -28,8 +27,8 @@ S, E = map(int, input().split())
 left, right = 1, 1000000000
 while left <= right:
     mid = (left + right)//2
-    visited = [False] * (N + 1)
-    visited[S] = True
+    visited = [0] * (N + 1)
+    visited[S] = 1
     if dfs(S, E, mid):
         left = mid + 1
     else:
