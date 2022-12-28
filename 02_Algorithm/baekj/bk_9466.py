@@ -1,34 +1,24 @@
 # 텀 프로젝트
-# 나의 풀이 -> 시간 초과
 from sys import stdin
 input = stdin.readline
 
 for tc in range(1, int(input())+1):
-    N = int(input())                             # 학생의 수(2 ≤ n ≤ 100,000)
-    arr = [0] + list(map(int, input().split()))  # 각 학생이 선택한 학생 리스트
+    n = int(input())  # 학생 수
+    picks = [0] + list(map(int, input().split()))  # 초이스
+    check = [0] * (n+1)
+    complete_n = 0  # 팀이 완성된 사람 수 기록
+    for i in range(1, n+1):
+        if not check[i]:  # 확인 안해본 친구라면
+            j = i
+            lst = [j]
+            check[j] = 1
+            while True:
+                j = picks[j]  # dfs
+                if check[j]:  # 현재 학생이 확인했었던 대상이라면
+                    if j in lst:  # 그 친구가 lst에 담겨있는지 확인
+                        complete_n += len(lst[lst.index(j):])  # 팀 완성
+                    break  # 현재 학생이 lst에 안담겨있다면 lst에 담겨있는 친구들은 모두 팀을 이룰 수 없음
+                lst.append(j)
+                check[j] = 1
 
-    cnt = 0
-    for i in range(1, N+1):
-        if arr[i]:
-            test = [i]
-            cnt += 1
-            while test:
-                m = test[-1]
-
-                if arr[m] == test[-1] or arr[m] == 0:
-                    cnt -= 1
-                    for num in test:
-                        arr[num] = 0
-                    break
-
-                elif arr[m] in test:
-                    cnt -= len(test[test.index(arr[m]):])
-                    for num in test:
-                        arr[num] = 0
-                    break
-
-                else:
-                    test.append(arr[m])
-                    cnt += 1
-
-    print(cnt)
+    print(n - complete_n)  # 전체 - 팀을 이룬 학생 수
