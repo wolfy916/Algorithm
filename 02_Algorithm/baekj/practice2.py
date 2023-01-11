@@ -1,34 +1,26 @@
-W, H = map(int, input().split())
-area = [list(input()) for _ in '_'*H]
-delta = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-minV = 10000
-for i in range(H):
-    for j in range(W):
-        if area[i][j] == 'C':
-            visited = [[minV] * W for _ in '_' * H]
-            visited[i][j] = 1
-            q = [(i, j, -1)]
-            while q:
-                vi, vj, d = q.pop(0)
-                if visited[vi][vj] > minV:
-                    continue
-                if area[vi][vj] == 'C' and (vi, vj) != (i, j):
-                    minV = min(minV, visited[vi][vj] - 1)
-                else:
-                    for k in range(4):
-                        di, dj = delta[k]
-                        ni, nj = vi + di, vj + dj
-                        if 0 <= ni < H and 0 <= nj < W and area[ni][nj] != '*':
-                            if not visited[ni][nj] or visited[ni][nj] > visited[vi][vj]:
-                                if d == -1:
-                                    visited[ni][nj] = visited[vi][vj]
-                                else:
-                                    if d == k:
-                                        visited[ni][nj] = visited[vi][vj]
-                                    else:
-                                        visited[ni][nj] = visited[vi][vj] + 1
-                                q.append((ni, nj, k))
-            print(minV)
-            for _ in range(H):
-                print(*visited[_])
-            exit()
+import sys
+sys.setrecursionlimit(100000)
+
+def dfs(now):
+    if now in gomgom:
+        return
+
+    if graph[now] == []:
+        print('yes')
+        exit()
+
+    for i in graph[now]:
+        if i not in gomgom:
+            dfs(i)
+
+n, m = map(int, input().split())
+graph = [[] for _ in range(n+1)]
+
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+
+GOM = int(input())
+gomgom = list(map(int, input().split()))
+dfs(1)
+print('Yes')
