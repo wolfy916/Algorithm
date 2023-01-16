@@ -1,26 +1,11 @@
-import sys
-sys.setrecursionlimit(100000)
+2 12
+1 2 3 4 5 2 2 2 2 2 2 2
+3
 
-def dfs(now):
-    if now in gomgom:
-        return
+3 9
+3 2 1 4 2 1 2 1 3
+2
 
-    if graph[now] == []:
-        print('yes')
-        exit()
-
-    for i in graph[now]:
-        if i not in gomgom:
-            dfs(i)
-
-n, m = map(int, input().split())
-graph = [[] for _ in range(n+1)]
-
-for _ in range(m):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-
-GOM = int(input())
-gomgom = list(map(int, input().split()))
-dfs(1)
-print('Yes')
+2 7
+2 3 2 3 1 2 7
+2
