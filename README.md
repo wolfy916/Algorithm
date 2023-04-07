@@ -30,7 +30,7 @@ axios, sockJS, stompjs
 
 **Blockchain**
 
-
+Solidy, ganache, remix, web3.j
 
 **Cooperation & Communication**
 
