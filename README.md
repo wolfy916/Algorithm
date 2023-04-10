@@ -46,7 +46,11 @@
 
 <br>
 
-## 
+## ERD
 
 
-산출물(ERD, 시스템 아키텍쳐, )
+
+## 시스템 아키텍쳐
+
+![아키텍처](https://user-images.githubusercontent.com/109320678/230845829-377e828f-2f93-4ce1-95b7-84a5980676fc.jpg)
+
