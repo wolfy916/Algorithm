@@ -48,7 +48,9 @@
 - 수동 채굴 : 유저는 게임 대기화면에서 서류 아이템을 수집하고, 수집량 조건을 만족했을때 제출하여 코인을 얻을 수 있습니다.
 ![수동채굴_AdobeExpress](https://user-images.githubusercontent.com/109320678/230848117-395a1ca5-a99a-442a-a6e1-06f95414efbf.gif)
 - 자동 채굴 : 유저가 지하철을 타고 이동하며, 새로운 역에 최초 진입할 때 일정량의 코인을 획득할 수 있습니다.
+
 <br>
+
 ### 2. PVP
 - 메인화면에서 같은 지하철역에 있는 유저들끼리 자동으로 랜덤 매칭되어 PVP를 진행하게 됩니다.
 - 매칭이 된 유저 2명은 "결투하기" 와 "도망치기" 액션을 선택할 수 있습니다.
@@ -56,20 +58,29 @@
 - 결투가 성사된 경우, 다음과 같은 두가지 게임을 랜덤으로 진행합니다.
 
 1. 지하철 자리 앉기 게임
-![두더지 대기](https://user-images.githubusercontent.com/109320678/230850833-530554ae-0fab-4408-ad71-fdeb49cd4954.gif) ![두더지](https://user-images.githubusercontent.com/109320678/230850902-ffd641ff-2d3f-42ba-b953-37cbce68b3b9.gif)
+
+![두더지 대기](https://user-images.githubusercontent.com/109320678/230850833-530554ae-0fab-4408-ad71-fdeb49cd4954.gif)
+![두더지](https://user-images.githubusercontent.com/109320678/230850902-ffd641ff-2d3f-42ba-b953-37cbce68b3b9.gif)
 
 2. 회식비 정산 게임
-![계산 대기](https://user-images.githubusercontent.com/109320678/230851289-47f21352-9e57-4e42-b140-5c60d7a9e14d.gif) ![계산게임](https://user-images.githubusercontent.com/109320678/230851315-285b57a3-43f4-4e1e-a69a-4278289e0255.gif)
+
+![계산 대기](https://user-images.githubusercontent.com/109320678/230851289-47f21352-9e57-4e42-b140-5c60d7a9e14d.gif)
+![계산게임](https://user-images.githubusercontent.com/109320678/230851315-285b57a3-43f4-4e1e-a69a-4278289e0255.gif)
 
 - 위 게임에 대한 결과 화면입니다.
+
 ![승리](https://user-images.githubusercontent.com/109320678/230851811-f2461366-24db-46aa-b9e9-9e9e07a63aa4.png)
 
 ### 3. 지하철 역 투자
 - 유저는 보유한 코인으로 2호선 지하철역에 대한 투자를 할 수 있습니다.
 - 어떤 지하철역에 대한 지분율을 갖고 있을때, 해당 역에서 진행되는 모든 게임의 수수료를 지분율에 비례하여 획득할 수 있습니다.
-![투자페이지_이동 gif](https://user-images.githubusercontent.com/109320678/230852663-1600d1fd-592c-4f16-8a49-8cacd1be7d6e.gif) ![멀캠역에투자하는gif](https://user-images.githubusercontent.com/109320678/230852690-d676eece-739b-4bd0-bf9a-b8b6d073c1a9.gif)
+
+![투자페이지_이동 gif](https://user-images.githubusercontent.com/109320678/230852663-1600d1fd-592c-4f16-8a49-8cacd1be7d6e.gif)
+![멀캠역에투자하는gif](https://user-images.githubusercontent.com/109320678/230852690-d676eece-739b-4bd0-bf9a-b8b6d073c1a9.gif)
 - 투자가 많이 일어나는 인기역과 내가 투자한 역을 확인할 수 있습니다.
-![인기역_AdobeExpress](https://user-images.githubusercontent.com/109320678/230853206-6db4335a-b76a-40ba-8c61-9a4a1019709f.gif) ![나의역_AdobeExpress](https://user-images.githubusercontent.com/109320678/230853220-5691083f-2c5d-430a-aa35-eb52470438a7.gif)
+
+![인기역_AdobeExpress](https://user-images.githubusercontent.com/109320678/230853206-6db4335a-b76a-40ba-8c61-9a4a1019709f.gif)
+![나의역_AdobeExpress](https://user-images.githubusercontent.com/109320678/230853220-5691083f-2c5d-430a-aa35-eb52470438a7.gif)
 <br>
 
 ### 4. 칭호 시스템
@@ -82,7 +93,10 @@
 
 ### 5. 특정 지하철역 이벤트 오브젝트
 - 위치기반 서비스의 특징을 살려, 특정 지하철역들에 진입하였을 때 출몰하는 오브젝트를 만들었습니다.
-![녹화_2023_04_06_14_52_43_972_AdobeExpress](https://user-images.githubusercontent.com/109320678/230854926-5f4ff4f3-6ef6-472e-9eda-e0c7153b2292.gif) ![녹화_2023_04_06_14_59_07_946_AdobeExpress](https://user-images.githubusercontent.com/109320678/230854992-c664c6b0-43d3-4058-bcbe-e84388868b21.gif) ![녹화_2023_04_06_14_56_10_680_AdobeExpress](https://user-images.githubusercontent.com/109320678/230855038-c3db896d-0839-4a7f-a60a-26c0ffc7b172.gif)
+
+![녹화_2023_04_06_14_52_43_972_AdobeExpress](https://user-images.githubusercontent.com/109320678/230854926-5f4ff4f3-6ef6-472e-9eda-e0c7153b2292.gif)
+![녹화_2023_04_06_14_59_07_946_AdobeExpress](https://user-images.githubusercontent.com/109320678/230854992-c664c6b0-43d3-4058-bcbe-e84388868b21.gif)
+![녹화_2023_04_06_14_56_10_680_AdobeExpress](https://user-images.githubusercontent.com/109320678/230855038-c3db896d-0839-4a7f-a60a-26c0ffc7b172.gif)
 
 <br>
 
