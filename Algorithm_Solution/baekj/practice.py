@@ -1,44 +1,30 @@
-def get_dist(i, j, k, l):
-    if i == k and j == l:
-        distance = -1
-    elif i == k:
-        distance = abs(j-l) - 1
-    elif j == l:
-        distance = abs(i-k) - 1
-    elif abs(i-k)>=1 and abs(j-l) >=1:
-        distance = max(abs(i-k)-1,abs(j-l)-1)
-    return distance
+# 그림
+def solution():
+    
+    def dfs(r, c):
+        sum = 1
+        for i in range(len(delta)):
+            nr, nc = r + delta[i][0], c + delta[i][1]
+            if nr < 0 or nc < 0 or nr >= N or nc >= M or visited[nr][nc] or not board[nr][nc]: continue
+            visited[nr][nc] = True
+            sum += dfs(nr, nc)
+        return sum
 
-n, m = map(int, input().split())
+    N, M = map(int, input().split())
+    board = [list(map(int, input().split())) for _ in range(N)]
+    delta = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    visited = [[False] * M for _ in range(N)]
+    answer = [0, 0]
 
-array = []
-total_dist_list = []
-second_min_values = []
+    for i in range(N):
+        for j in range(M):
+            if visited[i][j] or not board[i][j]: continue
+            visited[i][j] = True
+            size = dfs(i, j)
+            answer[0] += 1
+            if size > answer[1]:
+                answer[1] = size
 
-for _ in range(n):
-    row = list(map(int, (input().split())))
-    array.append(row)
-
-for i in range(n):
-    for j in range(m):
-        globals()[f'dist_list_{i}{j}'] = []
-        if array[i][j] == 1:
-            for k in range(n):
-                for l in range(m):
-                    distance = get_dist(i,j,k,l)
-                    globals()[f'dist_list_{i}{j}'].append(distance)
-        if globals()[f'dist_list_{i}{j}'] != []:
-            total_dist_list.append(globals()[f'dist_list_{i}{j}'])
-
-print(total_dist_list)
-# print(zip(*total_dist_list))
-
-for i in zip(*total_dist_list):
-    print(i)
-    sorted_values = sorted(val for val in i if val != -1)
-    if len(sorted_values) > 1:
-        second_min_values.append(sorted_values[0])
-    else:
-        second_min_values.append(0)
-
-print(max(second_min_values))
+    return "\n".join(map(str, answer))
+    
+print(solution())

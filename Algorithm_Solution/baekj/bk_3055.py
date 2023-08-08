@@ -13,9 +13,7 @@ for i in range(R):
         elif forest[i][j] == 'D':
             D = (i, j)  # 비버 굴 위치
 
-# q = [고슴도치, 물]
-q = [S] + q
-
+q = [S] + q  # 고슴도치가 q의 첫번째 원소로 오도록
 visited = [[0] * C for _ in '_' * R]
 visited[S[0]][S[1]] = 1
 while q:
