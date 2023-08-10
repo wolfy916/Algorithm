@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_12891.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_5014.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/problems/softeer/evaluate_score.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/problems/softeer/processing_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17422.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1799.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TIL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TIL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1394.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1394.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_3055.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_3055.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/problems/pracitce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/problems/pracitce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/problems/practice2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/problems/practice2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +30,24 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2FvxiEOUGvckX0huM1pMDo547Nr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunManager" selected="Python.pracitce">
-    <configuration name="bk_5014" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.bk_17422 (1)">
+    <configuration name="bk_17422 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,7 +59,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_5014.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17422.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -68,7 +68,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="evaluate_score" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bk_17422" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,11 +76,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/problems/softeer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/baekj" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/problems/softeer/evaluate_score.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\power\Desktop\Algorithm\Algorithm_Solution\baekj\bk_17422.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bk_1799" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/baekj" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1799.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,34 +152,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="practice2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TIL" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/baekj" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/practice2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bk_17422 (1)" />
+        <item itemvalue="Python.bk_17422" />
+        <item itemvalue="Python.bk_1799" />
         <item itemvalue="Python.pracitce" />
         <item itemvalue="Python.practice2 (1)" />
-        <item itemvalue="Python.practice2" />
-        <item itemvalue="Python.bk_5014" />
-        <item itemvalue="Python.evaluate_score" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +183,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
