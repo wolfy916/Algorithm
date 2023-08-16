@@ -1,24 +1,33 @@
-from collections import deque as dq
+# 소트게임
+# dfs로는 뭔가 답이 잘안나오나?
+import sys
+sys.setrecursionlimit(100000)
 
-def solution(program):
-    program.sort(key=lambda x:[x[1], -x[0]])
-    ans = [0] * 11
-    ans[0] = program[0][1]
-    stack = dq([program.pop(0)])
-    while stack[-1][1] == program[0][1]:
-        stack.append(program.pop(0))
-        ans[0] = stack[-1][1]
-    while stack:
-        prior, start, time = stack.pop()
-        ans[prior] += ans[0] - start
-        ans[0] += time
-        while program:
-            if start <= program[0][1] <= ans[0]:
-                if stack:
-                    if stack[-1][0] <= program[0][0]: break
-                stack.append(program.pop(0))
-            else:
-                break
-    return ans
+def input():
+    return sys.stdin.readline().rstrip('\n')
 
-print(solution([[3, 6, 4], [4, 2, 5], [1, 0, 5], [5, 0, 5]]))
+N, K = map(int, input().split())
+nums = list(map(int, input().split()))
+
+def dfs(select, cur):
+    global answer
+    if answer > 0: return
+    if select != [] and cur == nums: return
+    if cur == sorted_nums:
+        answer = len(set(select))
+        return
+    for i in range(N - K + 1):
+        temp = cur[:]
+        if K > 1:
+            for j in range(K // 2):
+                temp[i + j], temp[i + K - j - 1] = temp[i + K - j - 1], temp[i + j]
+        key = ''.join(map(str, temp))
+        if not visited.get(key):
+            visited[key] = True
+            dfs(select + [nums[i]], temp)
+
+sorted_nums = sorted(nums)
+answer = -1
+visited = dict()
+dfs([], nums)
+print(answer)
