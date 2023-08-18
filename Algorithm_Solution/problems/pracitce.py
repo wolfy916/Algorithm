@@ -1,33 +1,26 @@
-# 소트게임
-# dfs로는 뭔가 답이 잘안나오나?
+# 풀이 1. 완전 탐색
 import sys
-sys.setrecursionlimit(100000)
 
+# [A] 입력 함수 초기화
 def input():
     return sys.stdin.readline().rstrip('\n')
 
-N, K = map(int, input().split())
-nums = list(map(int, input().split()))
-
-def dfs(select, cur):
-    global answer
-    if answer > 0: return
-    if select != [] and cur == nums: return
-    if cur == sorted_nums:
-        answer = len(set(select))
-        return
-    for i in range(N - K + 1):
-        temp = cur[:]
-        if K > 1:
-            for j in range(K // 2):
-                temp[i + j], temp[i + K - j - 1] = temp[i + K - j - 1], temp[i + j]
-        key = ''.join(map(str, temp))
-        if not visited.get(key):
-            visited[key] = True
-            dfs(select + [nums[i]], temp)
-
-sorted_nums = sorted(nums)
-answer = -1
-visited = dict()
-dfs([], nums)
-print(answer)
+TC = int(input())
+for _ in range(TC):
+    M, N, x, y = map(int, input().split())
+    ans = 0
+    a = b = 0
+    print(a, b, ans)
+    while a != x or b != y:
+        a = (a + 1) % (M + 1)  # 1씩 더하는 귀요미
+        if a == 0: a = 1
+        b = (b + 1) % (N + 1)  #
+        if b == 0: b = 1
+        ans += 1
+        if b == y:
+            print(a, b, ans)
+        if (a, b) == (M, N):
+            if (x, y) != (M, N):
+                ans = -1
+            break
+    print(ans)
