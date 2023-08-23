@@ -1,70 +1,61 @@
 # 게리맨더링
-from itertools import combinations
+import sys
+from collections import deque as dq
+from itertools import combinations as cb
 
+# [A] 입력 함수 초기화
+def input():
+    return sys.stdin.readline().rstrip('\n')
 
-def check(s, e, area):
-    visited = [0]*(N+1)
-    q = [s]
-    visited[s] = 1
-    while q:
-        v = q.pop(0)
-        if v in adj_L[e]:
-            return True
-        else:
-            for w in adj_L[v]:
-                if not visited[w] and w in area:
-                    visited[w] = 1
-                    q.append(w)
-    return False
-
-
+# [1] 데이터 입력 및 간선 기록
 N = int(input())
-populations = [0] + list(map(int, input().split()))
-adj_L = [[] for _ in '_'*(N+1)]
-for i in range(1, N+1):
-    inform = list(map(int, input().split()))
-    for adj_sector in inform[1:]:
-        adj_L[i].append(adj_sector)
-        adj_L[adj_sector].append(i)
+area = [0] + list(map(int, input().split()))
+adjL = [[] for _ in range(N + 1)]
+for n in range(1, N + 1):
+    num, *lst = map(int, input().split())
+    for i in range(num):
+        adjL[n].append(lst[i])
 
-minV = 1000
-sectors = list(range(1, N+1))
-for j in range(1, (N//2)+1):
-    area1_lst = list(combinations(sectors, j))
-    for area1 in area1_lst:
-        break_check = 0
-        area2 = []
-        sumV2 = 0
-        for sector in sectors:
-            if sector not in area1:
-                area2.append(sector)
-                sumV2 += populations[sector]
+# [B] 조합에 대한 유효성 검사를 진행하는 bfs 함수
+def bfs(comb):
 
-        for a, b in list(combinations(area1, 2)):
-            if not check(a, b, area1):
-                break_check = 1
-                break
+    # [B-1] 첫번째 그룹이 모두 연결되어 있는지 확인
+    visited = [0] * (N + 1)
+    visited[0] = -1
+    for n in comb:
+        visited[n] = 1
+    q = dq([visited.index(0)])
+    visited[q[-1]] = 2
+    while q:
+        v = q.popleft()
+        for w in adjL[v]:
+            if visited[w] == 0:
+                visited[w] = 2
+                q.append(w)
 
-        if break_check:
-            continue
+    if visited.count(0) > 0: return False
 
-        for a, b in list(combinations(area2, 2)):
-            if not check(a, b, area2):
-                break_check = 1
-                break
+    # [B-2] 두번째 그룹이 모두 연결되어 있는지 확인
+    q = dq([visited.index(1)])
+    visited[q[-1]] = 3
+    while q:
+        v = q.popleft()
+        for w in adjL[v]:
+            if visited[w] == 1:
+                visited[w] = 3
+                q.append(w)
 
-        if break_check:
-            continue
+    if visited.count(1) > 0: return False
 
-        sumV1 = 0
-        for sector in area1:
-            sumV1 += populations[sector]
+    return True
 
-        minusV = abs(sumV1 - sumV2)
-        if minV > minusV:
-            minV = minusV
-
-if minV == 1000:
-    minV = -1
-
-print(minV)
+# [2] 구역을 나누는 조합의 유효성을 검사하고, answer 갱신
+answer = 1001
+tot_sumV = sum(area)
+for i in range(1, N // 2 + 1):
+    combs = cb(range(1, N + 1), i)
+    for comb in combs:
+        if bfs(comb):
+            sumV = sum(map(lambda x: area[x], comb))
+            answer = min(answer, abs(tot_sumV - 2 * sumV))
+print(answer if answer != 1001 else -1)
