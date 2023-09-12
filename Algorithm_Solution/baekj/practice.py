@@ -1,20 +1,28 @@
-def solution():
-    while True:
-        n, k = map(int, input().split())
-        if n == 0 and k == 0:
-            break
-        arr = list(map(int, input().split()))
-        dp = [[0] * (k + 1) for _ in range(n)]
-        count = 0
-        for i in range(n):
-            dp[i][1] = 1
-            for j in range(i):
-                if arr[j] >= arr[i]:
-                    continue
-                tmp = min(i + 1, k)
-                for c in range(1, tmp):
-                    dp[i][c + 1] += dp[j][c]
-            count += dp[i][k]
-        print(count)
+N, K = map(int,input().split())
+scores = list(map(int,input().split()))
 
-solution()
+s = 0
+e = 20 * N
+answer = 0
+
+if K == 1:
+    print(sum(scores))
+else:
+    while s <= e:
+        mid = (s+e) // 2
+
+        cnt = 0
+        score = 0
+        for i in range(N):
+            score += scores[i]
+            if score >= mid:
+                cnt += 1
+                score = 0
+        if score:
+            cnt += 1
+        if cnt > K:
+            answer = mid
+            s = mid + 1
+        else:
+            e = mid - 1
+    print(answer)

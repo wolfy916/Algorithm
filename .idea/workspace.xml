@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록">
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1261.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_13424.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_16139.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17179.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_6506.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_14233.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17951.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_19942.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_20437.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17179.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17179.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/baekj/practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Solution/problems/pracitce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Solution/problems/pracitce.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +48,8 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.bk_13424">
-    <configuration name="bk_1261" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.pracitce">
+    <configuration name="bk_14233" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -61,7 +61,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_1261.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_14233.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,7 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bk_13424" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bk_19942" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +82,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_13424.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_19942.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bk_17179" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="bk_20437" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,7 +103,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_17179.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_20437.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bk_6506" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pracitce" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -120,11 +120,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/baekj" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Algorithm_Solution/problems" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/baekj/bk_6506.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Algorithm_Solution/problems/pracitce.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bk_13424" />
-        <item itemvalue="Python.bk_17179" />
-        <item itemvalue="Python.bk_6506" />
+        <item itemvalue="Python.pracitce" />
+        <item itemvalue="Python.bk_20437" />
+        <item itemvalue="Python.bk_14233" />
         <item itemvalue="Python.practice" />
-        <item itemvalue="Python.bk_1261" />
+        <item itemvalue="Python.bk_19942" />
       </list>
     </recent_temporary>
   </component>

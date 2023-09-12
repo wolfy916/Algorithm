@@ -6,15 +6,14 @@ def input():
     return sys.stdin.readline().rstrip('\n')
 
 # [B] 임의의 롤케이크 조각 길이에 대한 유효성 검사
-def check(mid, prev, cnt):
-    if cnt == q:
-        return True if L - S[prev] >= mid else False
-    prev_s = S[prev] if prev >= 0 else 0
-    for i in range(prev + 1, M - q + cnt + 1):
-        s = S[i]
-        if s - prev_s < mid: continue
-        if check(mid, i, cnt + 1):
-            return True
+def check(mid):
+    cnt = prev = 0
+    for i in range(M):
+        if S[i] - prev < mid: continue
+        cnt += 1
+        prev = S[i]
+    if cnt > q: return True
+    elif cnt == q and L - prev >= mid: return True
     return False
 
 # [C] 이분 탐색 함수
@@ -23,9 +22,9 @@ def bin_search(tmp):
     left, right = 1, tmp
     while left <= right:
         mid = (left + right) // 2
-        if check(mid, -1, 0):
-            left = mid + 1
+        if check(mid):
             answer = mid
+            left = mid + 1
         else:
             right = mid - 1
     return answer
