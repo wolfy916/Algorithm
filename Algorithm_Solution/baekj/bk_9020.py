@@ -1,26 +1,25 @@
 # 골드바흐의 추측
 
-def BaeGoPa(num): # 소수를 판별하는 배고파 함수
-    for x in range(2, num): # 2부터 num-1 까지의 수로 나누었을때 나머지가 0나오면 소수가 아님
-        if num % x == 0:
-            return 0 # num은 소수가 아니기 때문에 0 반환
-    return 1 # num은 소수이기 때문에 1 반환
+# [A] 소수 리스트 생성 함수
+def gen_lst(v):
+    lst = [False, False] + [True] * (v + 1)
+    for i in range(2, v + 1):
+        if not lst[i]: continue
+        for j in range(i * 2, v + 1, i):
+            lst[j] = False
+    return lst
 
+# [main]
+if __name__ == '__main__':
+    T = int(input())
+    nums = [int(input()) for _ in range(T)]
 
-T = int(input()) # 입력
-for tc in range(1, T+1):
-    N = int(input())
+    # 입력값 중 최대값으로 소수 리스트 생성
+    lst = gen_lst(max(nums))
 
-    partition_list = [] # 파티션을 저장할 리스트 생성
-    for i in range(1, N): # 입력받은 수보다 작은 수들의 조합을 다 가져온다.
-        for j in range(1, N): # (0,0)부터 (N,N)까지 다 가져옴
-            if i + j == N and BaeGoPa(i) and BaeGoPa(j): # 두 숫자의 합이 N인지? i와 j가 소수인지?
-                partition_list += [[i, j]] # 조건 충족시 파티션 리스트에 리스트 형태의 원소로 추가
-    
-    minV = 10000 # 최솟값의 조합을 찾아야 하므로 탐색 ~
-    for x, y in partition_list:
-        if minV > abs(x-y):
-            minV = abs(x-y)
-            result = [x, y]
-            
-    print(result) # 출력
+    # 골드바흐 파티션 출력
+    for num in nums:
+        for i in range(num // 2, -1, -1):
+            if lst[i] and lst[num - i]:
+                print(i, num - i)
+                break

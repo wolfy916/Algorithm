@@ -1,28 +1,23 @@
+# 오큰수
 import sys
 
-# 오큰수
+# [A] 입력 함수 초기화
+def input():
+    return sys.stdin.readline().rstrip('\n')
 
-N = int(input())
-nums = list(map(int, sys.stdin.readline().split()))
+# [B] 메인 로직 함수
+def solution(N, A):
+    stack = [A[-1]]
+    result = []
+    for i in range(N-1, -1, -1):
+        while stack and A[i] >= stack[-1]:
+            stack.pop()
+        result.append(stack[-1] if stack else -1)
+        stack.append(A[i])
+    return reversed(result)
 
-STACK = [nums[-1]]
-result = [-1]
-
-for num in nums[-2::-1]:
-
-    STACK += [num]
-    if STACK[0] > num:
-        if len(STACK) > 2 and STACK[-2] > num:
-            result += [STACK[-2]]
-            STACK = STACK[1:]
-        else:
-            result += [STACK[0]]
-    elif STACK[0] < num:
-        result += [-1]
-        STACK = [num]
-    else:
-        result += [-1]
-        STACK = [num]
-
-
-print(' '.join(list(map(str, result[::-1]))))
+# [main]
+if __name__ == '__main__':
+    N = int(input())
+    A = list(map(int, input().split()))
+    print(*solution(N, A))
