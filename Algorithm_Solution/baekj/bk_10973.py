@@ -1,52 +1,23 @@
-# 못 품
+# 이전 순열
+import sys
 
-N = int(input())
-line = list(map(int, input().split()))
+# [A] 입력 함수 초기화
+def input():
+    return sys.stdin.readline().rstrip('\n')
 
-if line == sorted(line):
-    print(-1)
-else:
-    for i in range(N-1, -1, -1):
-        if line[i-1] > line[i]:
-            for j in range(N-1, i-1, -1):
-                if line[i-1] > line[j]:
-                    line[i-1], line[j] = line[j], line[i-1]
-                    maxV = i-1
-                    break
-            break
-    if maxV == -1:
-        print(line)
-    else:
-        line = line[:maxV+1] + sorted(line[maxV+1:], reverse = True)
-        print(line)
+# [B] 정렬
+def new_sort():
+    global arr
+    for i in range(N-1, 0, -1):
+        if arr[i-1] > arr[i]:
+            for j in range(N-1, 0, -1):
+                if arr[j] < arr[i-1]:
+                    arr[j], arr[i-1] = arr[i-1], arr[j]
+                    return arr[:i] + sorted(arr[i:], reverse=True)
+    return [-1]
 
-
-
-
-# 1 2 3 4
-# 1 2 4 3
-# 1 3 2 4
-# 1 3 4 2
-# 1 4 2 3
-# 1 4 3 2
-
-# 2 1 3 4
-# 2 1 4 3
-# 2 3 1 4
-# 2 3 4 1
-# 2 4 1 3
-# 2 4 3 1
-
-# 3 1 2 4
-# 3 1 4 2
-# 3 2 1 4
-# 3 2 4 1
-# 3 4 1 2
-# 3 4 2 1
-
-# 4 1 2 3
-# 4 1 3 2
-# 4 2 1 3
-# 4 2 3 1
-# 4 3 1 2
-# 4 3 2 1
+# [main]
+if __name__ == '__main__':
+    N = int(input())
+    arr = list(map(int, input().split()))
+    print(*new_sort())
