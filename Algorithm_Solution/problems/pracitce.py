@@ -1,37 +1,32 @@
-# 빠른 무작위 숫자 탐색
-import sys
+# "HH:MM" => M 변환 함수
+def trans1(t):
+    h, m = t.split(':')
+    if h[0] == '0': h = h[1]
+    if m[0] == '0': m = m[1]
+    return int(h) * 60 + int(m)
 
+# M => "HH:MM" 변환 함수
+def trans2(t):
+    h, m = divmod(t, 60)
+    h = '0' + str(h) if h < 10 else str(h)
+    m = '0' + str(m) if m < 10 else str(m)
+    return h + ':' + m
 
-# [A] 입력 함수 초기화
-def input():
-    return sys.stdin.readline().rstrip('\n')
+def solution(n, t, m, timetable):
+    table = sorted(list(map(trans1, timetable)), reverse=True)
+    time = 540 - t
+    answer = 0
+    for _ in range(n):
+        time += t
+        board = last = 0
+        while table and table[-1] <= time and board < m:
+            board += 1
+            last = table.pop()
+        if board < m:
+            answer = time
+        else:
+            answer = last - 1
 
+    return trans2(answer)
 
-# [B] bfs, 임의의 자연수 a -> b로 가는 거리를 간선의 가중치로 표기
-def bfs(si, sj):
-    delta = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-    visited = [[False] * 5 for _ in range(5)]
-    visited[si][sj] = True
-    q = [(si, sj, 0)]
-    while q:
-
-def dfs():
-
-
-# [main]
-if __name__ == "__main__":
-    # 입력부
-    board = [list(map(int, input().split())) for _ in range(5)]
-    r, c = map(int, input().split())
-
-    # 자연수가 표기되어있는 숫자판의 좌표 기록
-    coords = [[] for _ in range(7)]
-    coords[0] = [r, c]
-    for i in range(5):
-        for j in range(5):
-            if board[i][j] < 1: continue
-            coords[board[i][j]] = [i, j]
-	
-	answer = float('inf')
-
-	print(answer if answer < float('inf') else -1)
+print(solution(2,10,2,["09:10", "09:09", "08:00"]))
