@@ -1,22 +1,39 @@
-# 시간 관리
-import sys
+from heapq import heappop, heappush
 
-# [A] 입력 함수 초기화
-def input():
-    return sys.stdin.readline().rstrip('\n')
 
-# [B] 정렬 후, 누적합
-def solution(N, schedule):
-    schedule.sort(key=lambda x: x[1])
-    answer = 1000001
-    for i in range(N - 1):
-        schedule[i+1][0] += schedule[i][0]
-        answer = min(answer, schedule[i][1] - schedule[i][0])
-    answer = min(answer, schedule[N-1][1] - schedule[N-1][0])
-    return answer if answer > -1 else -1
+def solution(board):
+    answer = 0
+    N = len(board)
+    delta1 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    delta2 = [((-1, 0), (1, 0)), ((0, -1), (0, 1))]
+    hq = [(0, 0, 0, 0, 1)]
+    while hq:
+        cnt, li, lj, ri, rj = heappop(hq)
+        if (li, lj) == (N - 1, N - 1) or (ri, rj) == (N - 1, N - 1):
+            answer = cnt
+            break
+        # 이동
+        for di, dj in delta1:
+            nli, nlj = li + di, lj + dj
+            if nli < 0 or nlj < 0 or nli >= N or nlj >= N: continue
+            if board[nli][nlj] == 1: continue
+            nri, nrj = ri + di, rj + dj
+            if nri < 0 or nrj < 0 or nri >= N or nrj >= N: continue
+            if board[nri][nrj] == 1: continue
+            heappush(hq, (cnt + 1, nli, nlj, nri, nrj))
+        # 회전
+        k = abs(li - ri)  # 0: 가로 배치, 1: 세로 배치
+        for di, dj in delta2[k]:
+            nli, nlj = li + di, lj + dj
+            if nli < 0 or nlj < 0 or nli >= N or nlj >= N: continue
+            if board[nli][nlj] == 1: continue
+            nri, nrj = ri + di, rj + dj
+            if nri < 0 or nrj < 0 or nri >= N or nrj >= N: continue
+            if board[nri][nrj] == 1: continue
+            heappush(hq, (cnt + 1, nri, nrj, ri, rj))
+            heappush(hq, (cnt + 1, li, lj, nli, nlj))
 
-# [main]
-if __name__ == '__main__':
-    N = int(input())
-    schedule = [list(map(int, input().split())) for _ in range(N)]
-    print(solution(N, schedule))
+    return answer
+
+board = [[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]]
+print(solution(board))
