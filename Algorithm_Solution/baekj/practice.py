@@ -1,26 +1,28 @@
-# 압축
 import sys
+input = sys.stdin.readline
 
-# [A] 입력 함수 초기화
-def input():
-    return sys.stdin.readline().rstrip('\n')
+N = int(input())
+lst = []
+for _ in range(N):
+    num = int(input())
+    lst.append(num)
 
-# [B] dfs
-def dfs(idx):
-    value, i = 0, idx
-    while i < len(S):
-        if S[i] == '(':
-            v, n = dfs(i+1)
-            value += int(S[i-1]) * v - 1
-            i = n
-        elif S[i] == ')':
-            return value, i
-        else:
-            value += 1
-        i += 1
-    return value, i
+stack = []
+max_v = 0
+for i in range(N):
+    idx = i
+    # 스택에 값이 존재하면 큰 값을 만날 때까지 pop
+    while stack and stack[-1][1] > lst[i]:
+        idx, height = stack.pop()
+        # 현재 안덱스와 해당인덱스까지의 차이와 높이를 곱해서 최대 넓이를 탐색
+        rst = (i - idx) * height
+        max_v = max(max_v, rst)
+    stack.append([idx, lst[i]])
 
-# [main]
-if __name__ == '__main__':
-    S = input()
-    print(dfs(0)[0])
+# 전체가 동일한 높이일 경우를 추가적으로 고려
+while stack:
+    idx, height = stack.pop()
+    rst = (N - idx) * height
+    max_v = max(max_v, rst)
+
+print(max_v)
