@@ -13,5 +13,7 @@ const solution = (input) => {
   return answer;
 };
 
-const input = require('fs').readFileSync('./input.txt').toString().split('\n');
-console.log(answer);
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const inputArr = fs.readFileSync(filePath).toString().trim().split("\n");
+console.log(solution(inputArr));
