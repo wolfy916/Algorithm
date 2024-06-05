@@ -26,26 +26,34 @@ const minHeap = () => {
   }
 
   const topDown = () => {
-    let [cur, chd] = [0, 1];
-    while (chd < arr.length) {
-      let sibling = chd + 1;
-      if (sibling < arr.length && arr[sibling][1] < arr[chd][1]) {
-        chd = sibling;
+    let cur = 0;
+    let len = arr.length;
+    while (true) {
+      let left = 2 * cur + 1;
+      let right = 2 * cur + 2;
+      let smallest = cur;
+
+      if (left < len && arr[left][1] < arr[smallest][1]) {
+        smallest = left;
       }
-      if (arr[cur][1] < arr[chd][1]) {
-        [arr[cur], arr[chd]] = [arr[chd], arr[cur]];
-        cur = chd;
+      if (right < len && arr[right][1] < arr[smallest][1]) {
+        smallest = right;
+      }
+      if (smallest !== cur) {
+        [arr[cur], arr[smallest]] = [arr[smallest], arr[cur]];
+        cur = smallest;
       } else break;
     }
   }
 
   const pop = () => {
-    if (arr.length < 1) return null;
-    if (arr.length < 2) return arr.pop();
-    let popData;
-    [popData, arr[0]] = [arr[0], arr.pop()];
+    if (arr.length === 0) return null;
+    if (arr.length === 1) return arr.pop();
+
+    const top = arr[0];
+    arr[0] = arr.pop();
     topDown();
-    return popData;
+    return top;
   }
 
   return {
@@ -74,26 +82,29 @@ const solution = (input) => {
     const distance = Array.from({ length: N + 1 }, () => Infinity);    distance[s] = 0;
     const heap = minHeap();
     heap.push([s, 0]);
+
     while (heap.arr.length > 0) {
-      const [v, _] = heap.pop();
-      for (const [nv, nw] of graph[v]) {
-        if (distance[nv] > distance[v] + nw) {
-          distance[nv] = distance[v] + nw;
-          heap.push([nv, nw]);
+      const [v, vDist] = heap.pop();
+      if (vDist > distance[v]) continue;
+
+      for (const [n, nDist] of graph[v]) {
+        if (distance[n] > distance[v] + nDist) {
+          distance[n] = distance[v] + nDist;
+          heap.push([n, distance[n]]);
         }
       }
     }
+
     return distance;
   }
   
   const distV1 = dijkstra(v1);
   const distV2 = dijkstra(v2);
 
-  let answer = Infinity;
   const path1 = distV1[1] + distV1[v2] + distV2[N];
   const path2 = distV2[1] + distV1[v2] + distV1[N];
 
-  answer = Math.min(answer, path1, path2);
+  const answer = Math.min(path1, path2);
 
   return answer === Infinity ? -1 : answer;
 };
