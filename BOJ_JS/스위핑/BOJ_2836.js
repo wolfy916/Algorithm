@@ -1,31 +1,38 @@
 /**
  * 제목 : 수상 택시
  * 난이도 : 골드 3
- * 분류 : 스위핑, 정렬, 그리디?
+ * 분류 : 스위핑, 정렬
  */
 
+const convert = (s) => s.split(" ").map(Number);
+
 const solution = (input) => {
-  const convertToNumArr = (strArr) => strArr.split(" ").map(Number);
+  const [N, M] = convert(input[0]);
+  const info = input.slice(1,).map(convert).filter(v => v[0] > v[1]);
 
-  const [[N, M], info] = [convertToNumArr(input[0]), input.slice(1,).map(v => convertToNumArr(v).reverse()).filter((v) => v[0] < v[1])];
+  if (N < 1 || info.length === 0) return M;
 
-  if (N < 1) return M;
+  info.sort((a, b) => {
+    if (a[0] === b[0]) return a[1] - b[1];
+    else return b[0] - a[0];
+  });
 
-  info.sort((a, b) => a[0] - b[0]);
-
-  const selected = [];
-  let [s, e] = info[0];
-  for (const [left, right] of info.slice(1,)) {
-    if (left <= e && e < right) {
-      e = right;
-    } else if (e < left) {
-      selected.push([s, e]);
-      [s, e] = [left, right];
+  let answer = M;
+  let [s, e] = [info[0][0], info[0][1]];
+  for (let i=1; i<info.length; i++) {
+    if (info[i][0] === s || info[i][1] >= e) continue;
+    if (info[i][0] >= e && info[i][1] < e) {
+      e = info[i][1];
+    } else {
+      answer += (s - e) * 2;
+      s = info[i][0];
+      e = info[i][1];
     }
   }
-  selected.push([s, e]);
 
-  return M + selected.reduce((acc, cur) => acc + (cur[1] - cur[0]) * 2, 0);
+  answer += (s - e) * 2;
+
+  return answer;
 };
 
 const fs = require("fs");
