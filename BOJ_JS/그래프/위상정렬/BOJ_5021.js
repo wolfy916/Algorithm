@@ -28,6 +28,7 @@ const solution = (input) => {
   for (let i=N + 2; i<N + M + 2; i++) {
     const candidate = input[i].trim();
     const value = getValue(candidate);
+    
     if (maxV < value) {
       answer = candidate;
       maxV = value;
