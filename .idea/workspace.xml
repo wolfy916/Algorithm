@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록">
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_10871.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/다이나믹 프로그래밍/BOJ_2565.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/BOJ_16926.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_10813.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_10951.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_11654.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/자료구조/힙/BOJ_1927.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +48,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Kotlin script (Beta).BOJ_10813.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_10871.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_10951.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_11654.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_16926.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_1927.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_2565.kts.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -68,6 +75,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\힙" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\구현 및 시뮬레이션" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665386483257</updated>
       <workItem from="1733923788534" duration="148000" />
-      <workItem from="1734005690826" duration="4482000" />
+      <workItem from="1734005690826" duration="4619000" />
+      <workItem from="1734238528940" duration="6355000" />
     </task>
     <servers />
   </component>
