@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록">
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/BOJ_16926.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_10813.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_10951.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_11654.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/자료구조/힙/BOJ_1927.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,8 +70,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\힙" />
       <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\구현 및 시뮬레이션" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\힙" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -99,7 +92,7 @@
       <updated>1665386483257</updated>
       <workItem from="1733923788534" duration="148000" />
       <workItem from="1734005690826" duration="4619000" />
-      <workItem from="1734238528940" duration="6355000" />
+      <workItem from="1734238528940" duration="6537000" />
     </task>
     <servers />
   </component>
