@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록">
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/BOJ_11724.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_11399.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_1546.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_2563.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/그리디/BOJ_10162.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/분할 정복/BOJ_2630.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/자료구조/스택/BOJ_17299.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/정렬/BOJ_11650.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/정렬/BOJ_2750.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,15 +51,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Kotlin script (Beta).BOJ_10162.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_10813.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_10871.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_10951.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_11399.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_11650.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_11654.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_11724.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_1546.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_16926.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_1717.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_17299.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_1927.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_2563.kts.executor": "Run",
     "Kotlin script (Beta).BOJ_2565.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_2630.kts.executor": "Run",
+    "Kotlin script (Beta).BOJ_2750.kts.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -75,16 +90,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\유니온 파인드" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\스택" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\분할 정복" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\정렬" />
       <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\구현 및 시뮬레이션" />
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\힙" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\그리디" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -100,7 +117,8 @@
       <workItem from="1734005690826" duration="4619000" />
       <workItem from="1734238528940" duration="6537000" />
       <workItem from="1734431289063" duration="498000" />
-      <workItem from="1734526332881" duration="1854000" />
+      <workItem from="1734526332881" duration="2451000" />
+      <workItem from="1734844039145" duration="9198000" />
     </task>
     <servers />
   </component>
@@ -117,5 +135,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
