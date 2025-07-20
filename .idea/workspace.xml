@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ecb48a1-b6a9-4073-a23f-b1f59c25a0c3" name="디폴트 변경 목록" comment="디폴트 변경 목록">
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/BOJ_9184.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_1032.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_15969.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_2869.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_7567.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/다이나믹 프로그래밍/BOJ_1149.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/다이나믹 프로그래밍/BOJ_9251.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/문자열/BOJ_1786.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/test.main.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_1085.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_2577.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_2908.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/구현 및 시뮬레이션/BOJ_4153.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/그래프/최단 경로/BOJ_1956.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/다이나믹 프로그래밍/BOJ_14501.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ_Kotlin/정렬/BOJ_1181.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TIL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TIL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Script MainKts.main" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,69 +58,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Kotlin script (Beta).BOJ_10162.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1032.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_10813.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_10871.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_10951.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_11399.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1149.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_11650.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_11654.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_11724.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1546.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_15969.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_16926.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1717.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_17299.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1786.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_1927.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_2563.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_2565.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_2630.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_2750.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_2869.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_7567.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_9184.kts.executor": "Run",
-    "Kotlin script (Beta).BOJ_9251.kts.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/power/OneDrive/바탕 화면/Algorithm",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Kotlin script (Beta).BOJ_10162.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1032.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_10813.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1085.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_10871.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_10951.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_11399.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1149.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_11650.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_11654.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_11724.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1181.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_14501.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1546.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_15969.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_16926.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1717.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_17299.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1786.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1927.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_1956.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2563.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2565.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2577.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2630.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2750.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2869.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_2908.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_4153.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_7567.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_9184.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).BOJ_9251.kts.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin script (Beta).test.main.kts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/power/OneDrive/바탕 화면/Algorithm&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\정렬" />
       <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\다이나믹 프로그래밍" />
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\문자열" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\그래프\최단 경로" />
       <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\구현 및 시뮬레이션" />
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\자료구조\스택" />
-      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin\분할 정복" />
+      <recent name="C:\Users\power\OneDrive\바탕 화면\Algorithm\BOJ_Kotlin" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -127,7 +136,13 @@
       <workItem from="1734431289063" duration="498000" />
       <workItem from="1734526332881" duration="2451000" />
       <workItem from="1734844039145" duration="9351000" />
-      <workItem from="1735107303132" duration="9346000" />
+      <workItem from="1735107303132" duration="9419000" />
+      <workItem from="1735393806202" duration="6697000" />
+      <workItem from="1746708687618" duration="13000" />
+      <workItem from="1746708729692" duration="37000" />
+      <workItem from="1746709029250" duration="175000" />
+      <workItem from="1750859441951" duration="15000" />
+      <workItem from="1750859769414" duration="57000" />
     </task>
     <servers />
   </component>
