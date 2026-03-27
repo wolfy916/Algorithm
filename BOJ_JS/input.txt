@@ -1,1 +1,10 @@
-5 17
+9
+push b
+push w
+push b
+push b
+count b
+count w
+pop
+rotate r
+count b
