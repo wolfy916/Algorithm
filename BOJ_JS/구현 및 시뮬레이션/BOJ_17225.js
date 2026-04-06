@@ -5,55 +5,64 @@
  */
 
 const solution = (input) => {
-  const [A, B, _] = input[0].split(" ").map(Number);
-  const orders = input.slice(1).map((line) => {
-    const [t, c, m] = line.split(" ");
-    return [Number(t), c, Number(m)];
-  });
+  const [A, B, N] = input[0].split(" ").map(Number);
 
-  const needTime = { B: A, R: B };
+  let bTime = 0; // 상민
+  let rTime = 0; // 지수
 
-  const tasks = [];
-  for (const [time, color, count] of orders) {
-    for (let i = 0; i < count; i++) {
-      tasks.push({ time, color });
+  const events = [];
+
+  let line = 1;
+  for (let i = 0; i < N; i++) {
+    const [tStr, c, mStr] = input[line++].split(" ");
+    const t = Number(tStr);
+    const m = Number(mStr);
+
+    if (c === "B") {
+      if (bTime < t) bTime = t;
+
+      for (let j = 0; j < m; j++) {
+        events.push([bTime, "B"]);
+        bTime += A;
+      }
+    } else {
+      if (rTime < t) rTime = t;
+
+      for (let j = 0; j < m; j++) {
+        events.push([rTime, "R"]);
+        rTime += B;
+      }
     }
   }
 
-  tasks.sort((a, b) => {
-    if (a.time === b.time) {
-      return a.color === "B" ? -1 : 1;
+  // 정렬: 시간 → B 우선
+  events.sort((a, b) => {
+    if (a[0] === b[0]) {
+      if (a[1] === b[1]) return 0;
+      return a[1] === "B" ? -1 : 1;
     }
-    return a.time - b.time;
+    return a[0] - b[0];
   });
 
-  const nextAvailable = { B: 0, R: 0 };
-  const result = [];
+  const bResult = [];
+  const rResult = [];
 
-  for (const { time, color } of tasks) {
-    const start = Math.max(time, nextAvailable[color]);
-    const end = start + needTime[color];
+  let giftNumber = 1;
 
-    result.push({ end, color });
-
-    nextAvailable[color] = end;
-  }
-
-  result.sort((a, b) => {
-    if (a.end === b.end) {
-      return a.color === "B" ? -1 : 1;
+  for (const [, color] of events) {
+    if (color === "B") {
+      bResult.push(giftNumber);
+    } else {
+      rResult.push(giftNumber);
     }
-    return a.end - b.end;
-  });
-
-  const log = { B: [], R: [] };
-  let number = 1;
-
-  for (const item of result) {
-    log[item.color].push(number++);
+    giftNumber++;
   }
 
-  const answer = `${log.B.length}\n${log.B.join(" ")}\n${log.R.length}\n${log.R.join(" ")}`;
+  let answer = "";
+  answer += bResult.length + "\n";
+  answer += bResult.join(" ") + "\n";
+  answer += rResult.length + "\n";
+  answer += rResult.join(" ");
 
   return answer;
 };
