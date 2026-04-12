@@ -1,51 +1,59 @@
 /**
  * 제목 : K진 트리
  * 난이도 : 골드 3
- * 분류 : 트리
+ * 분류 : 트리, 최소 공통 조상
  */
 
 const solution = (input) => {
-  const [N, K, Q] = input[0].split(" ").map(Number);
+  const [_, K, Q] = input[0].split(" ").map(Number);
   const couples = Array.from({ length: Q }, (_, i) => {
-    return input[i + 1].split(" ").map(v => Number(v) - 1);
+    return input[i + 1].split(" ").map((v) => Number(v) - 1);
   });
 
   const getPar = (x) => Math.floor((x - 1) / K);
-  const getDepth = (x) => {}
-  
-  const answer = [];
-  const count = new Map();
-  let bigNumber, smallNumber;
-  
-  for (const [x, y] of couples) {
-    count.clear();
+  const getDepth = (x) => {
+    let depth = 1;
+    while (x > 0) {
+      x = getPar(x);
+      depth++;
+    }
+    return depth;
+  };
 
-    smallNumber = Math.max(x, y);
+  const answer = [];
+
+  let bigNumber, smallNumber;
+  let bigNumberDepth, smallNumberDepth;
+  let bigNumberCount, smallNumberCount;
+
+  for (const [x, y] of couples) {
+    smallNumber = Math.min(x, y);
     bigNumber = Math.max(x, y);
 
-    count.set(smallNumber, 0);
+    smallNumberDepth = getDepth(smallNumber);
+    bigNumberDepth = getDepth(bigNumber);
 
-    let par;
-    while(smallNumber > 0) {
-      par = getPar(smallNumber);
-      count.set(par, count.get(smallNumber) + 1);
-      smallNumber = par;
+    smallNumberCount = 0;
+    bigNumberCount = 0;
+
+    while (smallNumberDepth < bigNumberDepth) {
+      bigNumber = getPar(bigNumber);
+      bigNumberDepth--;
+      bigNumberCount++;
     }
 
-    let distance = 1;
-    while (bigNumber > 0) {
-      par = getPar(bigNumber);
-      if (count.get(par)) {
-        
-      } else {
+    while (smallNumber !== bigNumber) {
+      smallNumber = getPar(smallNumber);
+      smallNumberCount++;
 
-      }
+      bigNumber = getPar(bigNumber);
+      bigNumberCount++;
     }
+
+    answer.push(smallNumberCount + bigNumberCount);
   }
 
-
-
-  return answer;
+  return answer.join("\n");
 };
 
 const fs = require("fs");
